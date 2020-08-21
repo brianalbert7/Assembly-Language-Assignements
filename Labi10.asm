@@ -1,10 +1,8 @@
-TITLE Irvine Ch 10 Lab            (main.asm)
+TITLE Labi10            (Lab10i.asm)
 
 ; Programmed by:	Brian Albert
 ;
 ; Description:		Lab uses an array of records 
-; 
-; Date Written:     Based on carArray from 4/17/2016
 ;
 ; Revision date:	11/7/2019
 
@@ -37,12 +35,6 @@ main PROC
 
 	call displayCarListArray
 
-
-	; ====================================================================
-	;                                                                    ;
-	;       change this next part to count the number available          ;
-	;                                                                    ;
-	; ====================================================================
 
      mov ecx, lengthOf carList			; prep for loop
 	mov edi, offset carList				; load edi with address of car1
@@ -93,11 +85,6 @@ displayCar PROC uses edx eax
 	mov edx, offset availabilityStr			; display availability string
 	call writestring
 
-	; ====================================================================
-	;                                                                    ;
-	;            change this next part to display yes or no              ;
-	;                                                                    ;
-	; ====================================================================
      
      mov eax, (Car PTR [edi]).availability	; load eax with availability in record at EDI
 
